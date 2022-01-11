@@ -32,3 +32,8 @@ body {
   footer {
       margin-top: 30px;
   }
+
+  .finch-link {
+      text-decoration: none;
+      color: black;
+  }
