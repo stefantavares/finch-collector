@@ -9,6 +9,10 @@
       <p>Estimated Population: {{ finch.population }}</p>
       <p>Habitat: {{ finch.habitat }}</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'finches_update' finch.id %}">EDIT</a>
+        <a href="{% url 'finches_delete' finch.id %}">DELETE</a>
+    </div>
   </div>
 
 {% endblock %}
