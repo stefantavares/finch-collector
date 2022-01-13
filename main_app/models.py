@@ -10,6 +10,17 @@ MEALS = (
 # Create your models here.
 
 
+class Toy(models.Model):
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('toys_detail', kwargs={'pk': self.id})
+
+
 class Finch(models.Model):
     type = models.CharField(max_length=100)
     population = models.CharField(max_length=100)
@@ -25,6 +36,7 @@ class Finch(models.Model):
 class Feeding(models.Model):
     date = models.DateField('Feeding Date')
     meal = models.CharField(
+        'Meal Period',
         max_length=1,
         choices=MEALS,
         default=MEALS[0][0]
